@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exploring the iris dataset</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Exploring the iris dataset">
+  <meta name="author" content="Alicia Perez">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Exploring the iris dataset</h1>
+    <h2>My first shiny app</h2>
+    <p>Alicia Perez<br/>Universidad Catolica de Salta</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Edgar Anderson&#39;s Iris Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This famous (Fisher&#39;s or Anderson&#39;s) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width.</p>
+
+<p>The data contains 50 flowers from each of 3 species of iris:</p>
+
+<ul>
+<li>Iris setosa</li>
+<li>Iris versicolor</li>
+<li>Iris virginica</li>
+</ul>
+
+<p>This app will guide you to explore this data set, in particular the distributions of values of each of the variables for each of the species. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Iris species</h2>
+  </hgroup>
+  <article data-timings="">
+    <table><thead>
+<tr>
+<th><em>Iris setosa</em></th>
+<th><em>Iris versicolor</em></th>
+<th><em>Iris virginica</em></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><img src="assets/img/setosa.jpg" alt="Menu options" height="200" ></td>
+<td><img src="assets/img/versicolor.jpg" alt="Menu options" height="200" ></td>
+<td><img src="assets/img/virginica.jpg" alt="Menu options" height="200" ></td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app provides a menu to choose a variable, corresponding to a flower dimension. </p>
+
+<p><img src="assets/img/menuoptions.jpg" alt="Menu options" height="300" > </p>
+
+<p>Once a variable is chosen, its range of values will be displayed against the three iris species in the dataset. Also, statistics of that variable will be shown under the menu box. </p>
+
+<p>You can also choose whether to show the outliers in the plot.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>The code behind the app</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Code similar to this one is used to display the plot for the Sepal.Width case with outliers. </p>
+
+<p>In the actual app code the name of the variable to display and whether to display outliers (&quot;outline&quot; value) are constructed programmatically from user input.</p>
+
+<pre><code class="r">library(ggplot2)
+data(iris)
+boxplot(Sepal.Width ~ Species, data = iris, outline = TRUE, xlab=&quot;Species&quot;, ylab=&quot;Sepal Width&quot;, col=&quot;green&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Edgar Anderson&#39;s Iris Data'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Iris species'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The App'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The code behind the app'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
